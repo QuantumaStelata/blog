@@ -1,0 +1,79 @@
+:root {
+    --header-bg-color: rgba(0,0,0,0.6);     /* Цвет шапки */
+    --font-color: #fff;                     /* Цвет шрифта */
+    --main-bg: url('../img/bg.jpg');
+  }
+
+html, body, div, h1, p {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    color: var(--font-color);
+}
+
+a {
+    text-decoration: none; 
+}
+
+h1 {
+    color: var(--font-color);
+    margin: 1vw;
+    font: bold;
+    font-size: 3vw;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+h2 {
+    margin-left: 2vw;
+    font-size: 1.25vw;
+}
+
+p {
+    margin-bottom: 2vw;
+    font-size: 1.5vw;
+}
+
+.conteiner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background: var(--main-bg) #555;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+.my-photo {
+    margin-top: 3%;
+    max-width: 10%;
+    border-radius: 100%;        /* Радиус скругления */
+    border: 1px solid black;  /* Параметры рамки */
+}
+
+.header-background {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    height: 10vh;
+    width: 100vw;
+    background: var(--header-bg-color);
+}   
+
+.contaiter-social {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contaiter-social img {
+    width: 4vw;
+    margin: 0 1vw;
+}

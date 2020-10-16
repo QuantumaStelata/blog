@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru-Ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static '/img/titleicon.png' %}" type="image/png">
+    <title>{% block title%}Мой блог{% endblock %}</title>
+</head>
+<body>
+    <div class='conteiner'>
+        <div class="header-background">
+            <h2>Главная</h2>
+            <h2>Обо мне</h2>
+        </div>
+        <img class="my-photo" src="{% static 'img/myphoto.png' %}">
+        <h1>Shatalov Vladyslav</h1>
+        <p>Junior Python Developer</p>
+        <div class='contaiter-social'>
+            <a href='https://github.com/QuantumaStelata' target="blank">
+                <img src="{% static 'img/github.png' %}">
+            </a>
+            <a href='https://www.instagram.com/quantumastelata/' target="blank">
+                <img src="{% static 'img/instagram.png' %}">
+            </a>
+            <a href='https://t.me/quantumastelata' target="blank">
+                <img src="{% static 'img/telegramm.png' %}">
+            </a>
+        </div>
+    <!-- {% block content%}{% endblock %} -->
+</body>
+</html>
