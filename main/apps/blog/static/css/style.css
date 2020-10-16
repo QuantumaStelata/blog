@@ -4,12 +4,13 @@
     --main-bg: url('../img/bg.jpg');
   }
 
-html, body, div, h1, p {
+html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     color: var(--font-color);
+    background-color: var(--header-bg-color);
 }
 
 a {
@@ -17,21 +18,27 @@ a {
 }
 
 h1 {
+    margin: 0;
+    padding: 0;
     color: var(--font-color);
     margin: 1vw;
     font: bold;
-    font-size: 3vw;
+    font-size: 3rem;
     background-color: rgba(0, 0, 0, 0);
 }
 
 h2 {
-    margin-left: 2vw;
-    font-size: 1.25vw;
+    margin: 0;
+    padding: 0;
+    margin: 0 3vw;
+    font-size: 1.25rem;
 }
 
 p {
+    margin: 0;
+    padding: 0;
     margin-bottom: 2vw;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
 }
 
 .conteiner {
@@ -40,7 +47,7 @@ p {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background: var(--main-bg) #555;
+    background: url('../img/bg.png') #555;
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -56,19 +63,20 @@ p {
 
 .header-background {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     height: 10vh;
     width: 100vw;
     background: var(--header-bg-color);
+    box-shadow: 0px 20px 30px 10px rgba(0,0,0,0.6);
 }   
 
 .contaiter-social {
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: 15vh;
+    height: 10vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -76,4 +84,37 @@ p {
 .contaiter-social img {
     width: 4vw;
     margin: 0 1vw;
+    
 }
+
+.button-about-me {
+    width: 10vw;
+    height: 10vh;
+    margin: 40px;
+    border-radius: 50px;      
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--font-color);
+    outline: none;
+    font-size: 20px;
+}
+
+@media (max-width: 380px) { 
+    h1 {
+        font-size: 1rem;
+    }
+    h2, p {
+        font-size: 0.5rem;
+    }
+
+    .my-photo {
+        max-width: 30%;
+    }
+
+    .button-about-me {
+        width: 60px;
+        height: 40px;
+        font-size: 10px;
+        margin: 10px;
+    }
+ }
