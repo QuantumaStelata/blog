@@ -20,6 +20,8 @@ class AboutMe(models.Model):
 class Article(models.Model):
     article_title = models.CharField('Название статьи', max_length = 200)
     article_text = models.TextField('Текст статьи')
+    article_image = models.FileField(null = True, blank = True)
+    publicate = models.BooleanField('Опубликовать?', default = True)
     pub_date = models.DateTimeField('Дата публикации статьи')
 
     def __str__(self):

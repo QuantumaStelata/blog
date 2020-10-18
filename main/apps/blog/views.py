@@ -13,3 +13,7 @@ def main(request):
 def about_me(request):
     about_me_text = AboutMe.objects.order_by('about_me')
     return render(request, 'blog/about_me.html', {'about_me_text': about_me_text})
+
+def my_blog(request):
+    blog_articles_list = Article.objects.order_by('-pub_date')
+    return render(request, 'blog/my_blog.html', {'list': blog_articles_list})

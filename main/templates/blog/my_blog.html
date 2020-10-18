@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block bg %}
+    <div class='bg2'>
+{% endblock %}
+
+{% block content%}
+
+
+<section class='container-my-blog'>
+    {% if list %}
+        {% for i in list %}
+            {% if i.publicate %}
+            <div class="card">
+                <img src="static/media/{{i.article_image}}">
+                <h3 class='name'>{{i.article_title}}</h3>
+                <button class='addAnimation add-btn'>Смотреть</button>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        Статьи не найдены(
+    {% endif %}
+</section>
+{% endblock %}

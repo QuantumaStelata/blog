@@ -64,15 +64,6 @@ p {
 
 }
 
-.bg1 {
-    background: url('../img/bg1.jpg') #666;
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-    background-blend-mode: multiply;
-    background-attachment: fixed;
-}
-
 .my-photo {
     margin: 60px 0 10px;
     width: 175px;
@@ -128,7 +119,17 @@ p {
     flex-direction: column;
     margin-top: 15vh;
     width: 100vw;
-    height: 90vh;
+    height: auto;
+    min-height: 75vh;
+}
+
+.bg1 {
+    background: url('../img/bg1.jpg') #666;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
 }
 
 .p-about-me {
@@ -137,7 +138,50 @@ p {
     font-size: 20px;
 }
 
+.container-my-blog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    flex-wrap: wrap;
+    margin-top: 15vh;
+    width: 100vw;
+    height: auto;
+    min-height: 75vh;
+}
 
+.card {
+    max-width: 200px;
+    height: 500px;
+    padding: 0 78px 42px 78px;
+    text-align: center;
+    margin: 20px;
+    background-color: lawngreen;
+  }
+
+.bg2 {
+    background: url('../img/bg2.jpg') #666;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+}
+
+.card img {
+    width: auto;
+    /* padding: 0 0 10px 0; */
+  }
+
+.card button {
+    outline: none;
+    cursor: pointer;
+    border: 3px solid rgb(241, 63, 63);
+    border-radius: 45px;
+    padding: 1px 18px;
+    background-color: #fff;
+    color: rgb(241, 63, 63);
+  }
 
 
 
