@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block bg %}
+<div class='bg1'>
+{% endblock %}
+
+
+{% block content %}
+<div class='container-about-me'>
+    {% if about_me_text %}
+        {% for text in about_me_text %}
+            <p class='p-about-me'>{{text}}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

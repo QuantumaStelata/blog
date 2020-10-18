@@ -7,6 +7,16 @@ from django.utils import timezone
 
 # Create your models here.
 
+class AboutMe(models.Model):
+    about_me = models.TextField('Обо мне')
+
+    def __str__(self):
+        return self.about_me
+
+    class Meta:
+        verbose_name = 'Обо мне'
+        verbose_name_plural = 'Обо мне'
+
 class Article(models.Model):
     article_title = models.CharField('Название статьи', max_length = 200)
     article_text = models.TextField('Текст статьи')

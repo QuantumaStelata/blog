@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block bg %}
+    <div class='bg'>
+{% endblock %}
+
+{% block content %}
+<div class='conteiner'>
+    <img class="my-photo" src="{% static 'img/myphoto.png' %}">
+    <h1>Shatalov Vladyslav</h1>
+    <p>Junior Python Developer</p>
+    <div class='contaiter-social'>
+        <a href='https://github.com/QuantumaStelata' target="blank">
+            <img src="{% static 'img/github.png' %}">
+        </a>
+        <a href='https://www.instagram.com/quantumastelata/' target="blank">
+            <img src="{% static 'img/instagram.png' %}">
+        </a>
+        <a href='https://t.me/quantumastelata' target="blank">
+            <img src="{% static 'img/telegramm.png' %}">
+        </a>
+    </div>
+    <a href="{% url 'about_me' %}">
+        <button class='button-about-me'>About me</button>
+    </a>
+</div>
+{% endblock %}

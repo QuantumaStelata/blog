@@ -1,0 +1,25 @@
+@media (max-width: 992px){
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        width: 150px;
+        font-size: 1.25rem;
+    }
+    
+    p {
+        font-size: 1.1rem;
+    }
+    
+    .contaiter-social img {
+        width: 40px;
+        margin: 5px 10px;   
+    }
+
+    .button-about-me {
+        padding: 15px 20px;
+        margin: 20px;
+        font-size: 15px;
+    }
+}
