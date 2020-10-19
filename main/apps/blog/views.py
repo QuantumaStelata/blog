@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
 
 from .models import AboutMe, Article, Comment
@@ -17,3 +18,11 @@ def about_me(request):
 def my_blog(request):
     blog_articles_list = Article.objects.order_by('-pub_date')
     return render(request, 'blog/my_blog.html', {'list': blog_articles_list})
+
+def article(request, article_id):
+    try:
+        a = Article.objects.get(id = article_id)
+    except:
+        raise Http404("Статья не найдена")
+
+    return render (request, 'blog/article.html', {'article': a})

@@ -16,7 +16,8 @@ html, body {
 a {
     padding: 0;
     margin: 0;
-    text-decoration: none; 
+    text-decoration: none;
+    color: var(--font-color) !important;
 }
 
 h1 {
@@ -38,6 +39,17 @@ h2 {
     align-items: center;
     font-size: 1.25rem;
     color: var(--font-color);
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0 0 10px 0;
+    font-size: 3rem;
+    color: var(--font-color);
+    
 }
 
 p {
@@ -140,24 +152,16 @@ p {
 
 .container-my-blog {
     display: flex;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
     align-content: stretch;
+    flex-direction: column;
     flex-wrap: wrap;
     margin-top: 15vh;
     width: 100vw;
     height: auto;
     min-height: 75vh;
 }
-
-.card {
-    max-width: 200px;
-    height: 500px;
-    padding: 0 78px 42px 78px;
-    text-align: center;
-    margin: 20px;
-    background-color: lawngreen;
-  }
 
 .bg2 {
     background: url('../img/bg2.jpg') #666;
@@ -168,24 +172,64 @@ p {
     background-attachment: fixed;
 }
 
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    height: 75px;
+    padding: 5px 0px 5px 20px;
+    text-align: center;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 50px 40px rgba(0,0,0,0.6);
+}
+
+.card-name-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px; 
+    max-width: 400px;
+}    
+
 .card img {
-    width: auto;
-    /* padding: 0 0 10px 0; */
+    max-height: 85px;
+    width: 175px;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 25% 100%, 50% 50%);
+    transition: clip-path 500ms;
+    object-fit: cover;
+    padding: 0;
   }
 
-.card button {
-    outline: none;
-    cursor: pointer;
-    border: 3px solid rgb(241, 63, 63);
-    border-radius: 45px;
-    padding: 1px 18px;
-    background-color: #fff;
-    color: rgb(241, 63, 63);
-  }
+.card:hover img{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 25% 50%);
+    transition: clip-path 500ms;
+}
 
+.container-article { 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15vh;
+    width: 100vw;
+    height: auto;
+    min-height: 75vh;
+    word-break: break-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
+.bg3 {
+    background: url('../img/bg3.jpg') #666;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+}
 
-
-
-
+.p-time {
+    font: italic 0.8em "Fira Sans";
+}
 

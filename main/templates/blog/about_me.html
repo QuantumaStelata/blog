@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}
+    About me
+{% endblock %}
+
 {% block bg %}
     <div class='bg1'>
 {% endblock %}
@@ -10,7 +14,7 @@
 <div class='container-about-me'>
     {% if about_me_text %}
         {% for text in about_me_text %}
-            <p class='p-about-me'>{{text}}</p>
+            <p class='p-about-me'>{{text.about_me}}</p>
         {% endfor %}
     {% endif %}
 </div>

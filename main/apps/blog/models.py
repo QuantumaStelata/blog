@@ -18,11 +18,11 @@ class AboutMe(models.Model):
         verbose_name_plural = 'Обо мне'
 
 class Article(models.Model):
-    article_title = models.CharField('Название статьи', max_length = 200)
+    article_title = models.CharField('Название статьи', max_length = 50)
     article_text = models.TextField('Текст статьи')
     article_image = models.FileField(null = True, blank = True)
     publicate = models.BooleanField('Опубликовать?', default = True)
-    pub_date = models.DateTimeField('Дата публикации статьи')
+    pub_date = models.DateTimeField('Дата публикации статьи', auto_now=True)
 
     def __str__(self):
         return self.article_title
