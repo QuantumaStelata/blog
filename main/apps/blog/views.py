@@ -3,26 +3,31 @@ from __future__ import unicode_literals
 
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
-
+from django.urls import reverse
 from .models import AboutMe, Article, Comment
 # Create your views here.
 
 def main(request):
-    #latest_articles_list = Article.objects.order_by('-pub_date')
-    return render(request, 'blog/main.html')#, {'articles_list': latest_articles_list})
-
-def about_me(request):
-    about_me_text = AboutMe.objects.order_by('about_me')
-    return render(request, 'blog/about_me.html', {'about_me_text': about_me_text})
-
-def my_blog(request):
     blog_articles_list = Article.objects.order_by('-pub_date')
-    return render(request, 'blog/my_blog.html', {'list': blog_articles_list})
+    return render(request, 'blog/main.html', {'list': blog_articles_list})
+
 
 def article(request, article_id):
     try:
         a = Article.objects.get(id = article_id)
+        b = Comment.objects.filter(article=a.id)
     except:
-        raise Http404("Статья не найдена")
+        raise Http404("Статья не найдена") 
+    
+    #latest_comments_list = a.comment_set.order_by('-id')[:10]
 
-    return render (request, 'blog/article.html', {'article': a})
+    return render (request, 'blog/article.html', {'article': a, 'comment': b})
+
+# def comment(request, article_id):
+#     try:
+#         a = Article.objects.get(id = article_id)
+#     except:
+#         raise Http404("Статья не найдена")
+
+#     a.comment_set.create(author_name = request.POST['name'], comment_text = request.POST['text'])
+#     return HttpResponseRedirect(reverse('articles:detail'), args=(a.id,))

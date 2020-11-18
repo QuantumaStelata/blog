@@ -10,23 +10,27 @@
     <link rel="stylesheet" href="{% static 'css/media768.css' %}">
     <link rel="stylesheet" href="{% static 'css/media480.css' %}">
     <link rel="stylesheet" href="{% static 'css/media320.css' %}">
-    <link rel="shortcut icon" href="{% static '/img/titleicon.png' %}" type="image/png">
+    <link rel="shortcut icon" href="{% static 'img/titleicon.png' %}" type="image/png">
     <title>{% block title %}QuantumaStelata{% endblock %}</title>
 </head>
 <body>
-    {% block bg %}{% endblock %}
-    <div class="header-background">
-        <a href="/">
-            <h2>Home</h2>
-        </a>
-        <a href="{% url 'about_me' %}">
-            <h2>About me</h2>
-        </a>
-        <a href="{% url 'my_blog' %}">
-            <h2>My Blog</h2>
-        </a>
-    </div>
-    {% block content %}{% endblock %}
-    </div>
+    <header>
+        <div class='name'>
+        </div>
+        <div class='nav-bar'>
+            <a href="/">
+                <p>HOME</p>
+            </a>
+            <a>
+                <p>ABOUT ME</p>
+            </a>
+            <a href="/admin">
+                <p>ADMIN</p>
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>  
 </body>
 </html>
