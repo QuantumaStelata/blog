@@ -14,10 +14,10 @@
                     <h2>{{i.article_title|truncatechars:25}}</h2>
                 {% endif %}
                 <hr>
-                {% if i.article_text|length < 350 %}       
+                {% if i.article_text|length < 50 %}
                     <p>{{i.article_text}}</p>
                 {% else %}
-                    <p>{{i.article_text|truncatechars:350}}</p>
+                    <p>{{i.article_text|truncatechars:50}}</p>
                 {% endif %}
             </div>
         </a>

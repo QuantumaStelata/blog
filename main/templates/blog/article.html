@@ -12,12 +12,12 @@
     <h5>{{article.pub_date|date:'d F Y'}}</h5>
     <hr width='1200px'>
     <div class='article-text'>
-        <p>{{article.article_text}}</p>
+        <p>{{article.article_text|safe}}</p>
     </div>
     <hr width='1200px'>
 
 
-        <form action="" method="POST">
+        <form action="{% url 'leave_comment' article.id %}" method="POST">
             {% csrf_token %}
             <input type='text' required placeholder="Ваше имя" name='name'>
             <textarea name='text' required='' placeholder="Текст комментарий" cols="30" rows="10"></textarea>

@@ -23,11 +23,11 @@ def article(request, article_id):
 
     return render (request, 'blog/article.html', {'article': a, 'comment': b})
 
-# def comment(request, article_id):
-#     try:
-#         a = Article.objects.get(id = article_id)
-#     except:
-#         raise Http404("Статья не найдена")
+def leave_comment(request, article_id):
+    try:
+        a = Article.objects.get(id = article_id)
+    except:
+        raise Http404("Статья не найдена")
 
-#     a.comment_set.create(author_name = request.POST['name'], comment_text = request.POST['text'])
-#     return HttpResponseRedirect(reverse('articles:detail'), args=(a.id,))
+    a.comment_set.create(author_name = request.POST['name'], comment_text = request.POST['text'])
+    return HttpResponseRedirect(reverse('article', args=(a.id,)))
