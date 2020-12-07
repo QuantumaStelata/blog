@@ -7,5 +7,6 @@ from . import views
 urlpatterns = [
     url(r'article/(\d+)/leave_comment', views.leave_comment, name = 'leave_comment'),
     url(r'article/(\d+)', views.article, name = 'article'),
+    url(r'b/', views.ArticleListView.as_view()),
     url(r'', views.main, name = 'main'),
 ]

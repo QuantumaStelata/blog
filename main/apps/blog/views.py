@@ -5,6 +5,11 @@ from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from .models import AboutMe, Article, Comment
+
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from .serializers import ArticleList
 # Create your views here.
 
 def main(request):
@@ -31,3 +36,9 @@ def leave_comment(request, article_id):
 
     a.comment_set.create(author_name = request.POST['name'], comment_text = request.POST['text'])
     return HttpResponseRedirect(reverse('article', args=(a.id,)))
+
+class ArticleListView(APIView):
+    def get(self, request):
+        article = Article.objects.order_by('-pub_date')
+        serializer = ArticleList(article, many=True)
+        return Response(serializer.data)
